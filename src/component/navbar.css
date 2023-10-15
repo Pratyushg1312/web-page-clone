@@ -1,0 +1,119 @@
+.navbar{
+ 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    min-width: 300px;
+    min-height: 100vh;
+    background-color: #040440;
+    justify-content: space-between;
+}
+.active .navbtn, .profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0.23);
+    border: 1px solid rgba(255, 255, 255, 0.115);
+    border-radius: 3px;
+    
+    color: white;
+    margin: 20px 30px 20px 30px;
+}
+li{
+    list-style: none;
+}
+.active .navbtn .logo ,.pic{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+
+}
+.active .navbtn h1{
+    padding: 3px;
+    font-weight: bold;
+}
+.active .arrow{
+    display: none;
+}
+a{text-decoration: none;}
+
+.activepagename{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:20px 30px 20px 30px ;
+    color: white;
+}
+
+.activepagename .logo{
+    padding: 5px;
+}
+.activepagename .logo :hover{
+    transform: rotate(20deg);
+    cursor: pointer;
+}
+.pack{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile{
+    justify-content: space-between;
+}
+.pic{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 3px;
+    background-position: center;
+    background: url("https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+}
+#nav-tog {
+    display: none;
+  }
+
+@media (max-width:692px){
+    .line {
+        margin-bottom: 0px;
+        background-color: #040440;
+      }
+      .navbar{
+        position: absolute;
+        transform: translate(-100%);
+        
+        
+      }
+      input:checked~.navbar {
+        display: flex;
+        transform: translate(0%);
+      }
+      input:checked+.nav-tog-lab>.line {
+        background-color: #e8eae300;
+        background-image: none;
+      }
+      input:checked+.nav-tog-lab {
+        position: fixed;
+      }
+    
+      .nav-tog-lab {
+        position: fixed;
+        display: block;
+        z-index: 4;
+        padding: 23px;
+       
+      }
+    
+      .nav-tog-lab span {
+        margin-top: 3%;
+        display: block;
+        position: relative;
+        height: 0.3em;
+        width: 2.5em;
+        border-radius: 3px;
+      }
+}
