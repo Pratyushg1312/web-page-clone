@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import "./navbar.css"
 import { Navigationbutton } from './Navigationbutton'
 import { UilDashboard } from '@iconscout/react-unicons';
@@ -12,12 +12,14 @@ import { UilPolygon } from '@iconscout/react-unicons'
 import {UilAngleDown } from '@iconscout/react-unicons'
 export const Navbar = () => {
     const [modifier,setnamemod]= useState("Dashboard");
+    const [checked,setchecked]= useState();
+    const chkbox=useRef();
   return (
     <>
     <input 
 
- type="checkbox" id="nav-tog" />
-<label htmlFor="nav-tog" className="nav-tog-lab" >
+ type="checkbox" ref={chkbox} checked={checked} id="nav-tog" />
+<label htmlFor="nav-tog" className="nav-tog-lab" onClick={() => { setchecked(!checked) }} >
 <span className="line"></span>
 <span className="line"></span>
 <span className="line"></span>
@@ -25,7 +27,7 @@ export const Navbar = () => {
 <div className='navbar'>
 <div className="pack1">
 <div className="activepagename">
-<div className="logo"><UilPolygon size="45px"/></div>
+<div className="logo" onClick={() => { setchecked(!checked) }} ><UilPolygon size="45px"/></div>
 <h1>{modifier}</h1>
 </div>
 <div className="nav">
